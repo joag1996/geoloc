@@ -47,6 +47,7 @@ function showResult(input,output){
 
 //Retorna la longitud y latitud
 function showPosition(pos){
+    mostrarCoordenanda(pos);
     return {
             latitude: pos.coords.latitude,
             longitude: pos.coords.longitude
