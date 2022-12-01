@@ -48,7 +48,7 @@ function showResult(input,output){
 
 //Retorna la longitud y latitud
 function showPosition(pos){
-    mostrarCoordenanda(pos,mapaImg);
+    mostrarCoordenada(pos,mapaImg);
     return {
             latitude: pos.coords.latitude,
             longitude: pos.coords.longitude
