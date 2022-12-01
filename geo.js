@@ -48,11 +48,8 @@ function showResult(input,output){
 
 //Retorna la longitud y latitud
 function showPosition(pos){
-    //mostrarCoordenada(pos,mapaImg);
-      let direccion = pos.coords.latitude + "," + pos.coords.longitude;
-      let mapa = "http://maps.googleapis.com/maps/api/staticmap?center="
-           +direccion+"&zoom=14&size=500x500&sensor=false";
-       mapaImg.innerHTML = "<img src='"+mapa+"'>"; 
+    showmap(pos.coords.latitude,pos.coords.longitude)
+
     
     return {
             latitude: pos.coords.latitude,
@@ -93,4 +90,17 @@ function errorDetected(error){
            +direccion+"&zoom=14&size=500x500&sensor=false";
         map.innerHTML = "<img src='"+mapa+"'>";    
  }*/
+
+
+function showmap(lat,log){
+    
+var demoMap = L.map('map').setView([lat, log], 6);
+	var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+	var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+	var osm = new L.TileLayer(osmUrl, {
+	    minZoom: 5,
+	    maxZoom: 16,
+	    attribution: osmAttrib
+	});
+}
 
