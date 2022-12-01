@@ -7,6 +7,7 @@
 const geo = navigator.geolocation;
 //mi posicion
 var salida = document.getElementById("output");
+var mapaImg = document.getElementById("boxmap");
 
 console.log(geo);
 
@@ -47,7 +48,7 @@ function showResult(input,output){
 
 //Retorna la longitud y latitud
 function showPosition(pos){
-    mostrarCoordenanda(pos);
+    mostrarCoordenanda(pos,mapaImg);
     return {
             latitude: pos.coords.latitude,
             longitude: pos.coords.longitude
@@ -81,10 +82,10 @@ function errorDetected(error){
 
 
 //dibujar mapa
-function mostrarCoordenada(posicion) {
+function mostrarCoordenada(posicion,map) {
         var direccion = posicion.coords.latitude + "," + posicion.coords.longitude;
         var mapa = "http://maps.googleapis.com/maps/api/staticmap?center="
            +direccion+"&zoom=14&size=500x500&sensor=false";
-        document.getElementById("boxmap").innerHTML = "<img src='"+mapa+"'>";    
+        map.innerHTML = "<img src='"+mapa+"'>";    
  }
 
