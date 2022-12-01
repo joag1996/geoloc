@@ -60,6 +60,7 @@ function showPosition(pos){
 function errorDetected(error){
     switch (error.code) {
         case error.PERMISSION_DENIED:
+            clearInterval();
             return "Permiso de geolocalización denegado";
             break;
         case error.PERMISSION_UNVAILABLE:
