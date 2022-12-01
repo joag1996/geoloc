@@ -48,7 +48,12 @@ function showResult(input,output){
 
 //Retorna la longitud y latitud
 function showPosition(pos){
-    mostrarCoordenada(pos,mapaImg);
+    //mostrarCoordenada(pos,mapaImg);
+      let direccion = pos.coords.latitude + "," + pos.coords.longitude;
+      let mapa = "http://maps.googleapis.com/maps/api/staticmap?center="
+           +direccion+"&zoom=14&size=500x500&sensor=false";
+       mapaImg.innerHTML = "<img src='"+mapa+"'>"; 
+    
     return {
             latitude: pos.coords.latitude,
             longitude: pos.coords.longitude
@@ -82,10 +87,10 @@ function errorDetected(error){
 
 
 //dibujar mapa
-function mostrarCoordenada(posicion,map) {
+/*function mostrarCoordenada(posicion,map) {
         var direccion = posicion.coords.latitude + "," + posicion.coords.longitude;
         var mapa = "http://maps.googleapis.com/maps/api/staticmap?center="
            +direccion+"&zoom=14&size=500x500&sensor=false";
         map.innerHTML = "<img src='"+mapa+"'>";    
- }
+ }*/
 
