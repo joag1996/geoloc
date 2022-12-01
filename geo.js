@@ -48,7 +48,7 @@ function showResult(input,output){
 
 //Retorna la longitud y latitud
 function showPosition(pos){
-    showmap(pos.coords.latitude,pos.coords.longitude)
+    //showmap(pos.coords.latitude,pos.coords.longitude)
 
     
     return {
@@ -91,7 +91,7 @@ function errorDetected(error){
         map.innerHTML = "<img src='"+mapa+"'>";    
  }*/
 
-
+/*
 function showmap(lat,log){
     
 var demoMap = L.map('map').setView([lat, log], 6);
@@ -102,5 +102,5 @@ var demoMap = L.map('map').setView([lat, log], 6);
 	    maxZoom: 16,
 	    attribution: osmAttrib
 	});
-}
+}*/
 
