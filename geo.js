@@ -30,11 +30,12 @@ function detectGeo(e){
 
 //detectar posicion actual del dispositivo
 
-setInterval(detectGeo,15000);
+setInterval(detectGeo,10000);
 
 var i = 0;
 //mostrar en pantalla resultado
 function showResult(input,output){
+    alert("Actualizando "+ i)
     console.log(i);
     output.innerHTML="<h1>Latitude: </h1><span>"+input.latitude+"</span><br>"+"<h1>Longitud: </h1><span>"+input.longitude+"</span>";
     ++i;
