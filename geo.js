@@ -1,3 +1,7 @@
+//info geolocalizacion
+
+
+
 
 //funcion interna de geolocalizacion del navegador
 const geo = navigator.geolocation;
@@ -73,4 +77,13 @@ function errorDetected(error){
     }
 
 }
+
+
+//dibujar mapa
+function mostrarCoordenada(posicion) {
+        var direccion = posicion.coords.latitude + "," + posicion.coords.longitude;
+        var mapa = "http://maps.googleapis.com/maps/api/staticmap?center="
+           +direccion+"&zoom=14&size=500x500&sensor=false";
+        document.getElementById("boxmap").innerHTML = "<img src='"+mapa+"'>";    
+ }
 
